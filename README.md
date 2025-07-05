@@ -57,7 +57,9 @@ To get this project running on your own machine, follow these steps:
 Pull requests are welcome! For major changes or feature suggestions, please open an issue first to discuss what you would like to change.
 
 ## Developer
-- **Danush Gopal**
+**atharvakale** - https://github.com/atharvakale31
+
+Updated by - **Danush Gopal**
 
 ---
 *This project has been fully updated and modernized to ensure compatibility and performance with the current Android development ecosystem.*
