@@ -2,7 +2,7 @@
 
 This is a fully modernized, high-performance face recognition application for Android, built using the latest development tools and libraries. It provides a robust foundation for implementing real-time, on-device face recognition in any modern Android project.
 
-This project was developed by **Danush Gopal**. The core functionality is based on creating and comparing unique facial embeddings, allowing for fast, accurate, and offline recognition.
+This project was improvised by **Danush Gopal**. The core functionality is based on creating and comparing unique facial embeddings, allowing for fast, accurate, and offline recognition.
 
 ## Key Features
 - **Fast and Accurate:** Utilizes a lightweight MobileFaceNet model for high-speed performance on mobile devices.
