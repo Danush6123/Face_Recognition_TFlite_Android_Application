@@ -1,73 +1,63 @@
-# Real Time Face Recognition App using TfLite
+# Real-Time Face Recognition for Modern Android
 
-A minimalistic Face Recognition module which can be easily incorporated in any Android project.
+This is a fully modernized, high-performance face recognition application for Android, built using the latest development tools and libraries. It provides a robust foundation for implementing real-time, on-device face recognition in any modern Android project.
 
-## [Playstore Link](https://play.google.com/store/apps/details?id=com.atharvakale.facerecognition)
+This project was developed by **Danush Gopal**. The core functionality is based on creating and comparing unique facial embeddings, allowing for fast, accurate, and offline recognition.
 
-## Key Features 
-- Fast and very accurate.
-- No re-training required to add new Faces.
-- Save Recognitions for further use.
-- Real-Time and offline.
-- Simple UI.
+## Key Features
+- **Fast and Accurate:** Utilizes a lightweight MobileFaceNet model for high-speed performance on mobile devices.
+- **Modern Tech Stack:** Built with the latest versions of Android Studio, Gradle, and modern Jetpack libraries.
+- **No Re-training Required:** New faces can be added dynamically without needing to retrain the underlying model.
+- **Real-Time & Offline:** All processing, from face detection to recognition, happens entirely on the device. No internet connection is required.
+- **Simple and Intuitive UI:** A clean interface for adding, managing, and recognizing faces.
+- **Save & Manage Recognitions:** Easily save recognized faces with names and manage them through an intuitive list interface.
 
-## Tools and Frameworks used:
-- Android Studio (Java)
-- CameraX
-- ML Kit
-- TensorFlow Lite
+## Core Technologies & Frameworks
+- **Development Environment:** Android Studio (Hedgehog | 2023.1.1 or newer)
+- **Language:** Java
+- **Build System:** Gradle 8.x
+- **Core Libraries:**
+  - **CameraX:** For a modern, lifecycle-aware camera implementation.
+  - **ML Kit (Face Detection):** Used for efficiently locating faces in the camera feed.
+  - **TensorFlow Lite:** For running the machine learning model that generates face embeddings.
+  - **Android Jetpack:** Includes Navigation Component for UI flow and other modern architecture components.
 
-## Model 
-- MobileFaceNet : [Research Paper](https://arxiv.org/ftp/arxiv/papers/1804/1804.07573.pdf)
-- [Implementation](https://github.com/sirius-ai/MobileFaceNet_TF)
+## How It Works
+The application follows a sophisticated pipeline to achieve real-time recognition:
 
-## Installation
+1.  **Face Detection:** The CameraX feed is analyzed in real-time by Google's ML Kit to detect the presence and location of a face.
+2.  **Image Processing:** Once a face is detected, it is cropped and resized to the required 112x112 pixel input size for the model.
+3.  **Embedding Generation:** The processed face image is fed into a pre-trained **MobileFaceNet** model running via TensorFlow Lite. The model generates a **192-number vector (an "embedding")**, which serves as a unique mathematical signature for that face.
+4.  **Recognition via Comparison:** This new embedding is compared against a list of previously saved embeddings. The app calculates the **Euclidean distance** to find the closest match. If the distance is below a set threshold, the name associated with the saved embedding is displayed.
 
-Use Import from Version Control in Android Studio or Clone repo and open the project in Android Studio.
+## The Machine Learning Model
+- **Model Architecture:** **MobileFaceNet**
+- **Research Paper:** [ArcFace: Additive Angular Margin Loss for Deep Face Recognition](https://arxiv.org/abs/1801.07698)
+- **Note:** The model used in this app is **pre-trained**. The training process happened on large-scale academic datasets. This app focuses on using the model for inference (generating embeddings), not training.
 
-```bash
-git clone https://github.com/atharvakale31/Face_Recognition_Android.git
-```
-### Application file : [Face_Recognition.apk](https://drive.google.com/file/d/1ggOo4acHOodrdCP2MkfUv4DJlL_VDZH4/view?usp=sharing)
+## Getting Started
 
-## Usage
-<table>
-  <tr>
-    <td><b>1.Add Face</b></td>
-     <td><b>2.Import Face</b></td>
-     <td><b>3.Recognize Face</b></td>
-     
-  </tr>
-  <tr>
-    <td><img src="demo/add_face.gif" width=270 height=480></td>
-  <td><img src="demo/import photo.gif" width=270 height=480></td>
-    <td><img src="demo/recognize_face.gif" width=270 height=480></td>
-  
-  </tr>
- </table>
- 
+To get this project running on your own machine, follow these steps:
 
- 
- <table>
-  <tr>
-    <td><b>Actions</b></td>
-     <td><b>View Recognitions</b></td>
-     <td><b>Update Recognitions</b></td>
-  </tr>
-  <tr>
-    <td><img src="demo/actions.jpeg" width=270 height=480></td>
-    <td><img src="demo/view_reco.jpeg" width=270 height=480></td>
-    <td><img src="demo/update_reco.jpeg" width=270 height=480></td>
-  </tr>
- </table>
- 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/Danush6123/Face_Recognition_TFlite_Android_Application
+    ```
 
+2.  **Open in Android Studio:**
+    - Launch Android Studio (version Hedgehog or newer is recommended).
+    - Select `Open` and navigate to the cloned project folder.
+    - Android Studio will automatically sync the Gradle project.
 
+3.  **Run the App:**
+    - Connect an Android device (with USB debugging enabled) or start an Android Emulator.
+    - Click the 'Run' button (▶️) in Android Studio.
 
-# Action Items
-- [ ] Improve Performance(Code Optimization)
-- [ ] Auto face orientation for Import Photo Action.
-- [ ] iOS application
+## Contribution
+Pull requests are welcome! For major changes or feature suggestions, please open an issue first to discuss what you would like to change.
 
+## Developer
+- **Danush Gopal**
+
+---
+*This project has been fully updated and modernized to ensure compatibility and performance with the current Android development ecosystem.*
